@@ -8,25 +8,25 @@ import java.util.Scanner;
 
 public class QuizItem {
 
-        private char        QuizItemAnswer;
-        private String      QuizItemQuestion;
-        private String[]    QuizItemChoices;
+    private char        QuizItemAnswer;
+    private String      QuizItemQuestion;
+    private String[]    QuizItemChoices;
 
-        private boolean     CorrectAnswer;
-        private char        UserResponse;
+    private boolean     CorrectAnswer;
+    private char        UserResponse;
 
-        public QuizItem(String QuizItemQuestion, String[] QuizItemChoices, char QuizItemAnswer) {
+    public QuizItem(String QuizItemQuestion, String[] QuizItemChoices, char QuizItemAnswer) {
 
-            // validate the data for constructor
+        // validate the data for constructor
 
-            this.QuizItemQuestion = QuizItemQuestion;
-            this.QuizItemChoices = QuizItemChoices;
-            this.QuizItemAnswer = QuizItemAnswer;
+        this.QuizItemQuestion = QuizItemQuestion;
+        this.QuizItemChoices = QuizItemChoices;
+        this.QuizItemAnswer = QuizItemAnswer;
 
     }
 
     public void askQuestion() {
-        System.out.println("\n" + QuizItemQuestion);
+        System.out.println("\n" + QuizItemQuestion + "\n");
 
         for (int i = 0; i < QuizItemChoices.length; i++) {
             System.out.println("\t" + QuizItemChoices[i]);
@@ -58,7 +58,6 @@ public class QuizItem {
 
         return CorrectAnswer;
     }
-
 
     public String toString() {
 
