@@ -51,12 +51,13 @@ public class QuizItem {
 
     /**
      * Method to 'ask' the user this QuizItem by printing it to console.
-     * It will print the question & all possible choices.
+     * It will print the question and all possible choices.
      */
 
     public void askQuestion() {
         System.out.println("\n" + QuizItemQuestion + "\n");
 
+        // print all choices available for the question
         for (int i = 0; i < QuizItemChoices.length; i++) {
             System.out.println("\t" + QuizItemChoices[i]);
         }
@@ -75,11 +76,14 @@ public class QuizItem {
 
         System.out.println("\nType a character: ");
 
+        // check for input on console
         while (!scan.hasNext()) {
             String garbage = scan.nextLine();
             System.out.println("\nInput failed. Please type a valid character (A,B,C,D): ");
         }
 
+        // make sure the user provided legitimate input character
+        // otherwise, loop until they do
         do {
             str = scan.next();
             if ( str.matches("[abcdABCD]") ) UserResponse = str.toUpperCase().charAt(0);
@@ -96,6 +100,7 @@ public class QuizItem {
 
     public boolean checkResult() {
 
+        // set boolean based on whether user's answer matches the official one
         AnsweredCorrect = (UserResponse == QuizItemAnswer) ? true : false;
 
         if (AnsweredCorrect) System.out.println("\nCorrect!");

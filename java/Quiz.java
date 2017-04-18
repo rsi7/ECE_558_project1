@@ -49,18 +49,21 @@ public class Quiz {
 
     public void runQuiz() {
 
+        // shuffle the questions around
         Collections.shuffle(Arrays.asList(QuizItemArray));
 
         for (int i = 0; i < QuizItemArray.length; i++) {
 
             QuizItemArray[i].askQuestion();
             QuizItemArray[i].collectResponse();
+
+            // increment the score if the user answered correctly
             NumCorrectAnswers += (QuizItemArray[i].checkResult()) ? 1 : 0;
         }
     }
 
     /**
-     * Method to crunch the quiz statistics & print them to console.
+     * Method to crunch the quiz statistics and print them to console.
      * It will format print the percentage of correct answers.
      */
 
