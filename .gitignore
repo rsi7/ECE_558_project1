@@ -6,3 +6,12 @@ $ cat .gitignore
 # these are just PDFs and Word files
 
 /docs/*
+
+# skip over .idea folder
+# this is IntelliJ project management
+
+/.idea/*
+
+# skip any .iml file used by IntelliJ
+
+/*.iml
